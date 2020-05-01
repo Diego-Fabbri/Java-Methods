@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Classificazionetriangolo {
+/* dati tre numeri a b c rapresentano i lati di un triangolo , bisogna visualizzare un messaggio
+ *  che dice se il triangolo è equilatero , isoscele o scaleno. */ 
+	public static void main(String[] args) {
+      int n = 3;
+      int i = 1;
+      for (i=1;i<3;i++);
+      Scanner sc = new Scanner (System.in);
+      System.out.println("inserire valore lato:");
+      int a = sc.nextInt();
+      int b = sc.nextInt();
+      int c = sc.nextInt();
+if (a>0 && b>0 && c>0 && a<b+c && b<c+a && c<a+b && a>b-c && b>a-c && c>b-a && a>c-b && b>c-b && c> c-a)
+	System.out.println("i numeri sono i lati di un triangolo");
+int uguaglianze=0;
+// serve a contare il numero di coppie di lati uguali//
+if(a==b)
+	uguaglianze++;
+if(b==c)
+	uguaglianze++;
+if(c==a)
+	uguaglianze++;
+if(uguaglianze==0);//i lati sono tutti disuguali//
+System.out.println("il triangolo è scaleno ");
+	if(uguaglianze==1) //due lati sono uguali//
+		System.out.println("il triangolo è isoscele");
+	else
+		System.out.println("il triangolo è equilatero");
+	
+	}
+
+}
