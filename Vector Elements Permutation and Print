@@ -1,0 +1,39 @@
+public class permutazione {
+
+	public static void main(String[] args) {
+		char[] S={'a','b','c','d'};
+		permuta(S,0);
+
+	}
+public static void permuta(char[]x,int k){
+	if (k==x.length-1){
+		StampaVettore(x);
+		
+	}
+	else{
+		for(int i=k;i<x.length;i++){
+			scambia(x,i,k);
+			scambia(x,i,k+1);
+			scambia(x,i,k);
+			StampaVettore(x);
+		}
+		}
+	}
+	public static void scambia (char[]V,int i, int j) {
+		char f= V[i];
+		V[i]=V[j];
+		V[j]=f;
+		
+	}
+	public static void StampaVettore (char[]Y){
+		if(Y!=null){
+			for(int a=0;a<Y.length;a++){
+				System.out.print(Y[a] + " ");
+			}
+			}
+		else{
+			System.out.println("Il vettore non ha oggetti");
+		}
+	}
+}
+
