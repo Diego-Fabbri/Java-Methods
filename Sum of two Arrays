@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.math.*;
+
+public class sommavettoriale {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] X = {1,2,3};
+		int[] Y = {1,2,3};
+		int[] S = Sommavettoriale(X,Y);
+		System.out.println(S);
+		}
+	public static int[] Sommavettoriale (int[]X,int[]Y){
+		if (X.length!=Y.length)
+	return null ;
+		
+		int[] Z = new int [X.length];
+		for(int i=0;i<Z.length;i++)
+			Z[i]= X[i]+Y[i];
+		return Z;
+		
+	}
+
+}
