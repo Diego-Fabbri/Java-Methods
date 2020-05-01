@@ -1,0 +1,16 @@
+public class MassimoElemento {
+
+	public static void main(String[] args) {
+		int[]V = {1,2,3,4,5,666,78,4};
+		int max = RicercaMassimo(V);
+		System.out.println("il numero più grande è: " + max);
+
+	}
+public static int RicercaMassimo (int[]V){
+	int massimo=V[0];
+	for (int i =0;i<V.length;i++)
+		if(V[i]>massimo)
+			massimo=V[i];
+	return massimo;
+}
+}
