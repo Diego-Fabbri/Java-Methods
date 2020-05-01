@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+import java.math.*;
+public class equazione2grado {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("inserire valore a:");
+		double a = sc.nextDouble();
+		System.out.println("inserire valore b:");
+		double b = sc.nextDouble();
+		System.out.println("inserire valore c:");
+		double c = sc.nextDouble();
+		double delta = (b*b)-(4*a*c);
+		StampaDelta(a,b,c,delta);
+			}
+	public static void StampaDelta(double a, double b ,double c , double delta){
+	if(delta>=0){
+		double x1 = (-b+Math.sqrt(delta))/2*a;
+		double x2 = (-b-Math.sqrt(delta))/2*a;
+		System.out.println("le radici sono " + x1 + " ed " + x2);
+	}
+	
+		System.out.println("non ci sono soluzioni reali");
+	}
+}
