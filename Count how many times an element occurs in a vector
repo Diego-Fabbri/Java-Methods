@@ -1,0 +1,21 @@
+
+public class OccorrenzeArray {
+/* questo metodo conta le occorrenze , ovvero il numero di ripetizioni , di un elemento cercato (chiave) in un array.
+ * il metodo restituisce il numero di volte in cui l'elemento si ripete */
+	
+ 
+	public static void main(String[] args) {
+		int [] V = {1,2,3,3,2,3,3,4};
+		int chiave = 5;
+		int ripetizioni =Contaoccorrenze(V,chiave);
+		System.out.println("il numero di occorrenze è: " + ripetizioni);
+		}
+public static int Contaoccorrenze (int[]V,int chiave){
+	int occorrenze = 0;
+	for(int i =0; i<V.length;i++)
+		if(V[i]==chiave)
+			occorrenze++;
+	       return occorrenze;
+		
+}
+}
