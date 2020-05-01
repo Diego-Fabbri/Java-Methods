@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Funzioni {
+	public static void main (String[]args){
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Inserire base potenza: ");
+		int b = sc.nextInt();
+		System.out.println("Inserire esponente potenza: ");
+		int e = sc.nextInt();
+		double potenza = calcolaPotenza(b,e);
+		System.out.println("La potenza Ã¨: "+potenza);
+		double potenza_inversa = calcolaPotenzaInversa(b,e);
+		System.out.println("La potenza inversa Ã¨: "+potenza_inversa);
+		double sommatoria = sommatoria(b,e);
+		System.out.println("La sommatoria Ã¨: "+potenza_inversa);
+		sc.close();
+	}
+	
+	public static double calcolaPotenza(int a,int n) {
+		double p = 1;
+		for (int j=Math.abs(n);j>0;j--)
+			p *= a;
+		if (n < 0)
+			p = 1.0/p;
+		return p;
+	}
+	
+	public static double calcolaPotenzaInversa(int a, int i) {
+		double ai = calcolaPotenza(a, i);
+		return 1.0/ai;
+	}
+	
+	public static double sommatoria(int a, int n){
+		double sommatoria = 0;
+		for (int i=1; i<n; i++){
+			double potenza = calcolaPotenzaInversa (a, i);
+			sommatoria += potenza;
+		}
+		return sommatoria;
+	}
+	
+}
