@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+
+public class MatrixCutter {
+
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Inserire numero righe:");
+		int n = sc.nextInt();
+		System.out.println("Inserire numero colonne: ");
+		int m = sc.nextInt();
+		
+		int[][] mat = new int[n][m];
+		for(int a = 0;a<n;a++){
+			for(int b=0;b<m;b++){
+				mat[a][b] = (int) (Math.random()*100);
+			}
+		}	
+		System.out.println("La matrice generata è: ");
+		stampaMatrice(mat);
+		
+		System.out.println("Quale riga vuoi eliminare? (inserire un numero da 0 a " + (n-1)+")");
+		int e = sc.nextInt();
+		while(e>=n){
+			System.out.println("Questa riga non esiste. Si prega di inserire un indice valido.");
+			e = sc.nextInt();
+		}
+		int[][] mat_cut = eliminaRiga(mat,e);
+		System.out.println("Ecco la nuova matrice: ");
+		stampaMatrice(mat_cut);
+		
+		System.out.println("Quale Colonna vuoi eliminare? (inserire un numero da 0 a " + (m-1)+")");
+		int f = sc.nextInt();
+		while(f>=m){
+			System.out.println("Questa colonna non esiste. Si prega di inserire un indice valido.");
+			f = sc.nextInt();
+		}
+		int[][] mat_col_cut = eliminaColonna(mat,f);
+		System.out.println("Ecco la nuova matrice: ");
+		stampaMatrice(mat_col_cut);
+		
+		sc.close();
+	}
+
+	private static int[][] eliminaRiga(int[][] mat, int e) {
+		
+		int[][] nuova_mat = new int[mat.length-1][mat[0].length];
+	
+		for(int p = 0;p<mat.length;p++){
+			for(int q=0;q<mat[0].length;q++){
+				if(p!=e){
+					if(p<e)
+						nuova_mat[p][q] = mat[p][q];
+					else
+						nuova_mat[p-1][q] = mat[p][q];
+				}			
+			}
+		}	
+		return nuova_mat;
+	}
+
+	private static int[][] eliminaColonna(int[][] mat, int f) {
+		
+		int[][] nuova_mat = new int[mat.length][mat[0].length-1];
+	
+		for(int p = 0;p<mat.length;p++){
+			for(int q=0;q<mat[0].length;q++){
+				if(q!=f){
+					if(q<f)
+						nuova_mat[p][q] = mat[p][q];
+					else
+						nuova_mat[p][q-1] = mat[p][q];
+				}			
+			}
+		}	
+		return nuova_mat;
+	}
+	
+	
+	private static void stampaMatrice(int[][] mat) {
+		for(int f = 0;f<mat.length;f++){
+			for(int g=0;g<mat[0].length;g++){
+				System.out.print(mat[f][g]+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+}
