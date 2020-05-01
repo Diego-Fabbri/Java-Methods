@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class FunzioneLeggiVettore {
+
+	public static void main(String[] args) {
+LeggiVettore();
+System.out.println(LeggiVettore());
+
+	}
+public static int[] LeggiVettore(){
+	Scanner sc= new Scanner(System.in);
+	System.out.println("inserire dimensione vettore:");
+	int n = sc.nextInt();
+	int[] Z = new int[n];
+	//RIEMPIMENTO VETTORE
+	for(int i=0;i<Z.length;i++)
+		System.out.println("inserire elemento" + i + "-esimo:");
+	Z[i] = sc.nextInt();
+	
+}
+return Z
+}
