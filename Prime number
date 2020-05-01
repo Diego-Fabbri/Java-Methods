@@ -1,0 +1,20 @@
+import java.util.Scanner;
+import java.math.*;
+public class numeroprimo {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("inserire numero da verificare:");
+		int n = sc.nextInt();
+		boolean verifica = Primo(n);
+		System.out.println(verifica);
+	}
+public static boolean Primo (int n) {
+	for (int i=2;i<n;i++)
+		if(n%i==0)
+			//se il resto tra la divisione n/i è nullo
+			return false;
+		else
+			return true;
+}
+}
