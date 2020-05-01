@@ -1,0 +1,37 @@
+import java.math.*;
+public class RicercaBinariaIterativa {
+
+	public static void main(String[] args) {
+		int[]V={1,2,3,4,5,6,6,7,8,9};
+		int chiave = 8;
+		int ricerca= Ricerca(V,chiave);
+		System.out.println(ricerca);
+
+	}
+public static int Ricerca (int[]V,int chiave){
+	
+	int inizio =0 ; //indica la posizione dell'elemento iniziale
+	int fine = V.length-1;//indica posizone dell'elemento finale
+	int centro =(inizio+fine)/2;// indica posizione elemento centrale 
+	while (inizio<fine)
+		if(chiave==V[centro])
+			return centro;
+	    if(chiave>centro)//continua scansione a destra
+	    	inizio=centro+1;
+	    for(int i=inizio;i<fine;i++)
+	    	if(V[i]==chiave)
+	    		return i;
+	    	else
+	    		return -1;
+	    //continua scansione a sinistra
+	    	fine=centro-1;
+	    for(int j=0;j<fine;j++)
+	    	if(V[j]==chiave)
+	    		return j;
+	    	else
+	    		return -1;
+	    	
+	 
+}
+
+}
