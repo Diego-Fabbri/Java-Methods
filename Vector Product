@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.math.*;
+public class prodottoscalare {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] A = {1,2,3};
+		int[] B = {1,2,3};
+		int[] P = ProdottoScalare(A,B);
+		System.out.println(P);
+	
+	}
+public static int[] ProdottoScalare (int []A,int [] B){
+	int[] k = new int[A.length];
+	if(A.length!=B.length)
+
+		return null;
+	 for(int i=0;i<A.length;i++)
+			k[i]=A[i]*B[i];
+	return k;
+	
+}
+
+}
