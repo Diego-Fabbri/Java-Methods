@@ -1,0 +1,69 @@
+import java.util.Scanner;
+import java.math.*;
+
+public class DeterminanteDiUnamatrice {
+
+	public static void main(String[] args) {
+          double[][] Matrice= RiempiMatrice();
+          double det = Determinante(Matrice);
+          System.out.println("il determinante vale:" + det);
+	
+	}
+
+	public static double[][] RiempiMatrice(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("inserire lunghezza riga: ");
+		int n =sc.nextInt();
+		System.out.println("inserire lunghezza colonne: ");
+		int m =sc.nextInt();
+		double[][]N=new double [n][m];
+		for (int i=0;i<N.length;i++){//scorre righe
+			for (int j=0;j<N[0].length;j++){//scorre colonne
+				System.out.println("inserire elemento: " + i + j );
+				N[i][j]=sc.nextInt();
+			}
+		}
+				sc.close();
+				return N;
+			}
+  public static double Determinante (double [][] M){
+	  if(M.length==1){
+		  return M[0][0];
+	  }
+	  else{
+		  double W=0;
+		  int i= 0;
+		  for(int j=0;j<M[0].length;j++){
+			  double [][]N=CopiaMatrice(M,i,j);
+			  W+=Math.pow(-1,i+j)*M[i][j]*Determinante(N);
+			}
+		  return W;
+	  }
+	  
+  }
+  public static double [][]CopiaMatrice(double[][]M,int h,int k){
+	  double[][]N=new double[M.length-1][M[0].length-1];
+	  for(int i=0;i<h;i++){
+		  for(int j=0;j<k;j++){
+			  M[i][j]=N[i][j];
+		  }
+	  }
+	  for(int i=0;i<h;i++){
+		  for(int j=k+1;j<M[0].length;j++){
+			  M[i][j]=N[i][j-1];
+		  }
+	  }
+	  for(int i=h+1;i<M.length;i++){
+		  for(int j=0;j<k;j++){
+			  M[i][j]=N[i-1][j];
+		  }
+	  }
+	  for(int i=h+1;i<M.length;i++){
+		  for(int j=k+1;j<M[0].length;j++){
+			  M[i][j]=N[i-1][j-1];
+		  }
+	  }
+	  return N;
+  }
+}
+		
