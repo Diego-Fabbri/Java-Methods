@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Leggivettore {
+
+	public static void main(String[] args) {
+		int[]V= LeggiVettore();
+		StampaVettore(V);
+		
+
+	}
+	public static int[] LeggiVettore(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("inserire dimensione vettore");
+		int DimensioneVettore = sc.nextInt();
+		int [] V = new int [DimensioneVettore];
+		
+		for(int j=0; j<=DimensioneVettore-1;j++){
+			System.out.println("inserire elemento " + j +"-esimo:");
+			V[j]= sc.nextInt();}
+			sc.close();
+			return V;
+}
+	public static void StampaVettore (int[] V){
+		for(int i=0;i<V.length;i++)
+			System.out.print(V[i] + " ");
+	}
+}
