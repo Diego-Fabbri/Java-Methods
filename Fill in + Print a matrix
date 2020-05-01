@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Letturamatrice {
+	public static void main(String[] args) {
+		int[][] Matrice=LeggiMatrice();
+		StampaMatrice(Matrice);
+		
+	}
+	public static int[][] LeggiMatrice(){
+	Scanner sc = new Scanner(System.in);
+	System.out.println("inserire lunghezza riga: ");
+	int n =sc.nextInt();
+	System.out.println("inserire lunghezza colonne: ");
+	int m =sc.nextInt();
+	int[][]N=new int [n][m];
+	for (int i=0;i<N.length;i++){//scorre righe
+		for (int j=0;j<N[0].length;j++){//scorre colonne
+			System.out.println("inserire elemento: " + i + j );
+			N[i][j]=sc.nextInt();
+		}
+		
+	}
+	sc.close();
+	return N;
+	}
+	public static void StampaMatrice(int[][] x){
+		for(int i=0;i<x.length;i++){
+
+			for(int j=0;j<x[0].length;j++)
+		        System.out.print(x[i][j]+" ");
+			System.out.println();
+	
+}
+	}
+}
