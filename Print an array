@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class FunzioneStampaVettore {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int[] V = {1,2,3,4,5};
+		StampaVettore(V);
+
+		
+	}
+public static void StampaVettore (int[] V){
+	if(V!=null)
+		for(int i=0;i<V.length;i++)
+			System.out.print(V[i] + " ");
+	else
+		System.out.println("il vettore non ha oggetti");
+}
+}
