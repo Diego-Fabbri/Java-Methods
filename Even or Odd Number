@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.math.*;
+public class numeropariodispari {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Inserire numero da verificare: ");
+		int n = sc.nextInt();
+	verifica(n);
+		
+		
+}
+	
+	public static boolean verifica(int a)   {
+		if(n%2==0)
+			return true;
+		else
+			return false;
+		}
+
+
+}
+
+
+
