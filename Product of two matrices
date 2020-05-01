@@ -1,0 +1,27 @@
+import java.math.*;
+public class Prodottomatrici {
+
+	public static void main(String[] args){
+		int [][]A={};
+		int [][]B={};
+		int[][] P= Prodotto(A,B);
+	System.out.println(P);;
+		
+	}
+public static int[][] Prodotto(int[][]A,int[][]B){
+	if(A[0].length==B.length){
+		int[][] C = new int[A.length][B[0].length];
+	for(int i=0;i<C.length;i++){
+		for(int j=0;j<C[0].length;j++){
+			C[i][j]=0;//si inizializza con valore neutro della sommatoria
+	         for(int k=0;k<C[0].length;k++)
+		        C[i][j]=A[i][k]*B[k][j];
+		}
+	}
+	return C;
+	}
+	else
+		return null;
+}
+
+}
