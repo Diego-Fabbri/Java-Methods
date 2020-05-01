@@ -1,0 +1,16 @@
+import java.math.*;
+public class SommaElementiColonna {
+
+	public static void main(String[] args) {
+		int[][]M;
+		int colonna;
+        int sommacolonna= Somma(M,colonna);
+        System.out.println(sommacolonna);
+	}
+public static int Somma(int[][]M,int colonna){
+	int sommaelementi= 0;
+	for(int i=0;i<M[0].length;i++)
+		sommaelementi=sommaelementi+M[i][colonna];
+	return sommaelementi;
+}
+}
