@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.math.*;
+
+public class numeroinverso {
+
+	public static void main(String[] args) {
+		
+Scanner sc = new Scanner(System.in);
+System.out.println("inserire valore n:");
+float n = sc.nextFloat();
+if(n==0)
+	System.out.println("operazione non consentita");
+else
+
+System.out.println("il risultato è:" + 1/n);
+	}
+
+}
