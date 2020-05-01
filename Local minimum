@@ -1,0 +1,86 @@
+public class MinimiLocali {
+
+
+	public static void main(String[] args) {
+		int x[] = {1,2,3,4,5,6,7,8,9,10,11};
+		double fx[] = {0.1,2.0,2.1,2.0,1.5,1.1,0.0,1.1,1.2,2.0,1.5};
+		
+		int c[] = cercaCoordinateMinimiLocali(x,fx);
+		for (int i=0;i<c.length;i++) {
+			System.out.print(c[i]+"	");
+		}
+		System.out.println();
+		double v[] = cercaValoriMinimiLocali(x,fx);
+		for (int i=0;i<v.length;i++) {
+			System.out.print(v[i]+"	");
+		}
+	}
+	
+	public static double[] cercaValoriMinimiLocali(int x[],double fx[]) {
+		int dim = contaMinimiLocali(fx);
+		double minimi_locali[] = new double[dim];
+		int pos = 0;
+		for (int i=0;i<fx.length;i++) {
+			if (i == 0) {
+				if (fx[i] < fx[i+1]) {
+					minimi_locali[pos] = fx[i];
+					pos++;
+				}
+			} else if (i== fx.length-1) {
+				if (fx[i] < fx[i-1]) {
+					minimi_locali[pos] = fx[i];
+					pos++;
+				}
+			} else {
+				if (fx[i] < fx[i-1] && fx[i] < fx[i+1]) {
+					minimi_locali[pos] = fx[i];
+					pos++;
+				}
+			}
+		}
+		return minimi_locali;
+	}
+	
+	public static int[] cercaCoordinateMinimiLocali(int x[],double fx[]) {
+		int dim = contaMinimiLocali(fx);
+		int minimi_locali[] = new int[dim];
+		int pos = 0;
+		for (int i=0;i<fx.length;i++) {
+			if (i == 0) {
+				if (fx[i] < fx[i+1]) {
+					minimi_locali[pos] = x[i];
+					pos++;
+				}
+			} else if (i== fx.length-1) {
+				if (fx[i] < fx[i-1]) {
+					minimi_locali[pos] = x[i];
+					pos++;
+				}
+			} else {
+				if (fx[i] < fx[i-1] && fx[i] < fx[i+1]) {
+					minimi_locali[pos] = x[i];
+					pos++;
+				}
+			}
+		}
+		return minimi_locali;
+	}
+	
+	public static int contaMinimiLocali(double fx[]) {
+		int count = 0;
+		for (int i=0;i<fx.length;i++) {
+			if (i == 0) {
+				if (fx[i] < fx[i+1])
+					count++;
+			} else if (i== fx.length-1) {
+				if (fx[i] < fx[i-1])
+					count++;
+			} else {
+				if (fx[i] < fx[i-1] && fx[i] < fx[i+1])
+					count++;
+			}
+		}
+		return count;
+	}
+
+}
