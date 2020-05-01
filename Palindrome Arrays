@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.math.*;
+public class VerificaPalindromo {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("inserire dimensione vettore");
+		int n = sc.nextInt();
+		int[] V = new int [n];
+		//riempiamo il vettore
+		for(int i=0;i<V.length;i++)
+			System.out.println("inserire elemento i-esimo");
+		V[i]= sc.nextInt();
+		System.out.println(V);
+		int i = 0;//scorre il vettore
+		boolean Palindromia = true;
+		if(!Palindromo(V,i))
+		
+			Palindromia=false;
+		else
+			Palindromia=true;
+		System.out.println("la condizione è:" + Palindromia)
+		
+		;
+	}
+public static boolean Palindromo(int[]V , int i){
+	//  scorre gli elementi del vettore
+	for(int i=0; i<V.length/2;i++)
+		if(V[i]!=V[V.length-1-i])
+			return false;
+		else
+			return true;
+	
+}
+}
