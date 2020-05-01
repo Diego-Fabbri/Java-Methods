@@ -1,0 +1,25 @@
+import java.math.*;
+public class capocchia {
+import java.util.Scanner;
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Dammi n: ");
+		int n=sc.nextInt();
+		int fattoriale =fact(n);
+		
+	}
+
+	static int fact ( int n){
+		int f;
+		if (n==0)
+			f=1;
+		if (n==1) 
+			f=1;
+		if (n>1)
+			f=(fact(n-1));
+			
+		
+		
+		return f;
+	}
+}
